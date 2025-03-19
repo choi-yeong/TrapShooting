@@ -172,8 +172,8 @@ ERROR:
 > 
 > &rarr; 스크립트에서 위치디바이스의 주소가 max에 달하면 0으로 초기화 시키는 것이 아니라 비행시간인 TRTG의 PT를 줄여 클레이가 빠르게 사라지도록 수정해서 여러번 반복하는 것을 방지 및 스크립트에서 해당디바이스주소가 ON일떄 위치디바이스가 0으로 초기화되는 코드를 삭제함.
 >
-> ![iamge](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정1.png)
-
+>![iamge](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정1.png)
+> 
 > 📝결과 : 정상동작. 더 이상 클레이가 여러번 던져지지 않음.
 
 ### 2. 발포섬광(총격파티클)이 표현되지 않는 버그 발생
