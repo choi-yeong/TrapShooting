@@ -171,17 +171,23 @@ ERROR:
 > &rarr; 같은 클레이번호가 여러번 반복하는 걸 보고 스크립트의 위치 디바이스주소가 문제인것을 깨달음.
 > 
 > &rarr; 스크립트에서 위치디바이스의 주소가 max에 달하면 0으로 초기화 시키는 것이 아니라 비행시간인 TRTG의 PT를 줄여 클레이가 빠르게 사라지도록 수정해서 여러번 반복하는 것을 방지 및 스크립트에서 해당디바이스주소가 ON일떄 위치디바이스가 0으로 초기화되는 코드를 삭제함.
-> ![gif](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정1.gif)
+>
+> ![iamge](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정1.png)
 
-> 📝결과 : 정상동작
+> 📝결과 : 정상동작. 더 이상 클레이가 여러번 던져지지 않음.
 
 ### 2. 발포섬광(총격파티클)이 표현되지 않는 버그 발생
 > 총격파티클이 1틱만 ON되어서 이미지가 보이기도 전에 OFF되는 것이라 판단
 > 
 > &rarr; 총격파티클 전에 TRTG로 200ms의 텀을 둬서 총격파티클이 모니터출력주파수 및 사람의 육안으로 확인할 수 있도록 수정함.
-> ![gif](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정3.gif)
-> 📝결과 : 정상동작 및 이로인해 예상문제점이던 "1개의 클레이로 2번 점수 얻기" 버그도 예방되었음.
+>
+>![image](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정3.png)
+>
+> 📝결과 : 정상동작. 총격파티클 정상 동작. 또한, 예상문제점이던 "1개의 클레이로 2번 점수 얻기" 버그도 예방되었음.
 
 ### 3. 게임시작도 안 했는데 접시가 던져지는 걸 방지
 > 클레이던지기(TOF펑션)가 게임 시작 전에는 실행되지 않도록 첫행에 게임시간.Q를 A접점으로 넣음으로 게임 중에만 접시를 던지도록 구현함
-> ![gif](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정2.gif)
+> 
+> ![image](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정2.png)
+>
+> 📝결과 : 정상동작. 게임 시작 버튼을 누르기전에 접시가 던져지는 일이 사라짐.
