@@ -10,6 +10,8 @@
 |XGT Panerl| - | IPC Serise(wXP)[1024x768]|
 |설치링크|[PLC설치](https://ssqfd-abhdhraad3gkgbcg.a03.azurefd.net/ssqblob/largefile/document/17421913207640/XG5000_V4.78_2025-01-17_Kr.exe "XG5000 4.78버전 한글판")|[HMI설치](https://ssqfd-abhdhraad3gkgbcg.a03.azurefd.net/ssqblob/largefile/document/17385570144790/XP-Builder_V3.90.0909.exe "XP-Builder 3.90 설치")|
 
+[유튜브영상링크](https://youtu.be/cFVF2-EeiwI?si=3EVNnLrey5DPiLhG "시연 영상 보기")
+
 ※업데이트 상황에 따라 설치링크에 변동이 생기면 링크로 접속이 안될 수 있습니다.
 
 ## 🙋‍♂️구현한 기능
@@ -31,7 +33,7 @@
 &rarr; HMI 부품비트의 직선거리 이동속도(애니메이션)과 PLC상의 로직 타이머(판정)의 싱크를 맞추는 수고가 많이 들어가게 됨.
 
 ### 3. 탄약과 장전 기능 구현
-![gif](https://github.com/user-attachments/assets/5c415fa7-f397-4fb5-a225-8e6f2ffc13e0)
+![gif](https://github.com/choi-yeong/TrapShooting/blob/main/image/%EC%8B%9C%EC%97%B0%EC%98%81%EC%83%81%20-%20Clipchamp%EB%A1%9C%20%EC%A0%9C%EC%9E%91.gif)
 
 * 탄약을 장전할때는 장전하는 시간 1초동안 장전버튼을 꾹 누르고 있어야한다.
 * 1초동안 꾹 누르지 않고 중간에 클릭을 떼버리면 장전이 되지 않는다.
@@ -62,8 +64,9 @@
 
 
 ### 6. 기능부분 전부 완성. (클레이 비행, 사격, 명중, 탄약 기능, 재장전 기능, 사운드 등)
-![gif](https://github.com/choi-yeong/TrapShooting/blob/main/image/d.gif)
-
+![gif](https://github.com/choi-yeong/TrapShooting/blob/main/image/%EA%B2%A9%EB%B0%9C%20-%20Clipchamp%EB%A1%9C%20%EC%A0%9C%EC%9E%91.gif)
+![gif](https://github.com/choi-yeong/TrapShooting/blob/main/image/%EC%B4%9D%EC%95%8C%20-%20Clipchamp%EB%A1%9C%20%EC%A0%9C%EC%9E%91%20(1).gif)
+![gif](https://github.com/choi-yeong/TrapShooting/blob/main/image/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EB%8A%94%20%EB%8F%99%EC%98%81%EC%83%81%20-%20Clipchamp%EB%A1%9C%20%EC%A0%9C%EC%9E%91.gif)
 ```
 // 클레이가 날아가는 애니메이션을 표현할 스크립트
 //0번 클레이
@@ -172,7 +175,7 @@ ERROR:
 > 
 > &rarr; 스크립트에서 위치디바이스의 주소가 max에 달하면 0으로 초기화 시키는 것이 아니라 비행시간인 TRTG의 PT를 줄여 클레이가 빠르게 사라지도록 수정해서 여러번 반복하는 것을 방지 및 스크립트에서 해당디바이스주소가 ON일떄 위치디바이스가 0으로 초기화되는 코드를 삭제함.
 >
-> ![iamge](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정1.png)
+> ![iamge](https://github.com/choi-yeong/TrapShooting/blob/main/image/%EC%83%88%20%ED%8F%B4%EB%8D%94/%EC%88%98%EC%A0%951.png)
 
 > 📝결과 : 정상동작. 더 이상 클레이가 여러번 던져지지 않음.
 
@@ -181,13 +184,13 @@ ERROR:
 > 
 > &rarr; 총격파티클 전에 TRTG로 200ms의 텀을 둬서 총격파티클이 모니터출력주파수 및 사람의 육안으로 확인할 수 있도록 수정함.
 >
->![image](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정3.png)
+>![image](https://github.com/choi-yeong/TrapShooting/blob/main/image/%EC%83%88%20%ED%8F%B4%EB%8D%94/%EC%88%98%EC%A0%953.png)
 >
 > 📝결과 : 정상동작. 총격파티클 정상 동작. 또한, 예상문제점이던 "1개의 클레이로 2번 점수 얻기" 버그도 예방되었음.
 
 ### 3. 게임시작도 안 했는데 접시가 던져지는 걸 방지
 > 클레이던지기(TOF펑션)가 게임 시작 전에는 실행되지 않도록 첫행에 게임시간.Q를 A접점으로 넣음으로 게임 중에만 접시를 던지도록 구현함
 > 
-> ![image](https://github.com/choi-yeong/TrapShooting/blob/main/image/수정2.png)
+> ![image](https://github.com/choi-yeong/TrapShooting/blob/main/image/%EC%83%88%20%ED%8F%B4%EB%8D%94/%EC%88%98%EC%A0%952.png)
 >
 > 📝결과 : 정상동작. 게임 시작 버튼을 누르기전에 접시가 던져지는 일이 사라짐.
